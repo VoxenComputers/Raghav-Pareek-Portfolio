@@ -78,12 +78,16 @@ export default function ScrollyCanvas({ scrollProgress }: ScrollyCanvasProps) {
 
         const handleResize = () => {
             if (canvasRef.current) {
-                canvasRef.current.width = window.innerWidth;
-                canvasRef.current.height = window.innerHeight;
-                // Trigger a re-render or wait for scroll
+                // High-DPI Support
+                const dpr = window.devicePixelRatio || 1;
+                canvasRef.current.width = window.innerWidth * dpr;
+                canvasRef.current.height = window.innerHeight * dpr;
+
+                // Scale context to match
+                const ctx = canvasRef.current.getContext("2d");
+                if (ctx) ctx.scale(dpr, dpr);
+
                 // Ideally we would redraw here, but we need the current progress
-                // which isn't easily accessible outside the event loop without get()
-                // We can just rely on the next scroll frame or use scrollProgress.get()
                 const currentProgress = scrollProgress.get();
                 const frameIndex = Math.min(
                     frameCount - 1,
