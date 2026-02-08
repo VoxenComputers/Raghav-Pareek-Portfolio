@@ -23,7 +23,7 @@ export default function ScrollyCanvas({ scrollProgress }: ScrollyCanvasProps) {
             const img = new Image();
             // Pad with zeros: 0 -> 000, 10 -> 010, etc.
             const formattedIndex = i.toString().padStart(3, "0");
-            img.src = `/sequence/${formattedIndex}.webp`;
+            img.src = `/sequence/${formattedIndex}.png`;
 
             img.onload = () => {
                 loadedCount++;
