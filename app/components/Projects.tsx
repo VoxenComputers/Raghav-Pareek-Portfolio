@@ -15,6 +15,7 @@ export default function Projects() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
                     className="text-4xl md:text-6xl font-bold mb-16 text-white"
                 >
                     My Projects
@@ -31,7 +32,7 @@ export default function Projects() {
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
+                                viewport={{ once: false, margin: "-50px" }}
                                 className="relative p-8 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md hover:bg-white/10 transition-colors duration-300 h-full"
                             >
                                 <div className="mb-4">

@@ -10,7 +10,7 @@ export default function About() {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-150px" }}
                     className="max-w-4xl mx-auto"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12 tracking-tight">
