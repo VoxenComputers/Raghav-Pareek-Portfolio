@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, MotionValue } from "framer-motion";
+import Loader from "./Loader";
 
 interface ScrollyCanvasProps {
     scrollProgress: MotionValue<number>;
@@ -102,8 +103,8 @@ export default function ScrollyCanvas({ scrollProgress }: ScrollyCanvasProps) {
     return (
         <div className="absolute inset-0 w-full h-full">
             {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center bg-[#121212] z-50 text-white">
-                    Loading...
+                <div className="absolute inset-0 flex items-center justify-center bg-[#121212] z-50">
+                    <Loader />
                 </div>
             )}
             <canvas
